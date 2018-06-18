@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="47076" started-at="2018-06-18T20:49:01Z" finished-at="2018-06-18T20:49:48Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="47076" started-at="2018-06-18T20:49:01Z" finished-at="2018-06-18T20:49:48Z">
+      <class name="tests.SubmitNewApplication">
+        <test-method status="PASS" signature="launchApplication()[pri:0, instance:tests.SubmitNewApplication@4678c730]" name="launchApplication" is-config="true" duration-ms="25028" started-at="2018-06-18T20:49:01Z" finished-at="2018-06-18T20:49:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method status="PASS" signature="verifyHomePage()[pri:0, instance:tests.SubmitNewApplication@4678c730]" name="verifyHomePage" duration-ms="21251" started-at="2018-06-18T20:49:26Z" finished-at="2018-06-18T20:49:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyHomePage -->
+        <test-method status="PASS" signature="closeApplication()[pri:0, instance:tests.SubmitNewApplication@4678c730]" name="closeApplication" is-config="true" duration-ms="747" started-at="2018-06-18T20:49:47Z" finished-at="2018-06-18T20:49:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+      </class> <!-- tests.SubmitNewApplication -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
