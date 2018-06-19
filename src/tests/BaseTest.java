@@ -17,12 +17,11 @@ public class BaseTest{
 	 */
 	@BeforeTest
 	public void launchApplication() {
-//		 System.setProperty("webdriver.gecko.driver", "E:\\SeleniumResource\\geckodriver.exe"); 
+//		 System.setProperty("webdriver.gecko.driver", "D:\\Selenium\\geckodriver.exe"); 
 //		 driver = new FirefoxDriver();
-		 System.setProperty("webdriver.chrome.driver", "E:\\SeleniumResource\\chromedriver.exe");
+		 System.setProperty("webdriver.chrome.driver", "D:\\Selenium\\chromedriver.exe");
 		 driver = new ChromeDriver();
 		 String url = Utilities.readConfig("url");
-		 System.out.println("this is url : "+ url);
 		 driver.get(url);
 	}
 	
@@ -31,7 +30,6 @@ public class BaseTest{
 	 */
 	@AfterTest
 	public void closeApplication() {
-		System.out.println("After test --> Close application");
 		driver.quit();
 	}
 }

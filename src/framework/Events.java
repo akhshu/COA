@@ -1,10 +1,15 @@
 package framework;
 
 
+import java.util.Random;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class Events {
@@ -29,11 +34,13 @@ public class Events {
 	public void enterValue(By by, String value) {
 		getElement(by).sendKeys(value);
 	}
-
+	
+	
 	/**
 	 * @param by
 	 */
 	public void click(By by) {
+		waitForPresent(by);
 		getElement(by).click();
 	}
 
@@ -49,6 +56,7 @@ public class Events {
 	 * @return text of object 
 	 */
 	public String getText(By by) {
+		waitForPresent(by);
 		return getElement(by).getText();
 	}
 
@@ -67,5 +75,20 @@ public class Events {
 		return subStrings;
 	}
 	
+	public WebElement waitForPresent(By by){
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		return wait.until(ExpectedConditions.presenceOfElementLocated(by));
+	}
 	
+	public int getRandonNumber(int count){
+		Random rand = new Random(); 
+		int value = rand.nextInt(count);
+		System.out.println(value);
+		return value;
+	}
+	
+	public void selectFromDropdown(By by,String value){
+		Select dropdown = new Select(getElement(by));
+		dropdown.selectByVisibleText(value);
+	}
 }
