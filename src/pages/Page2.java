@@ -42,6 +42,10 @@ public class Page2 extends Events{
 		return getText(vendorNotFoundLabel);
 	}
 
+	public void SelectCertificationApplyingFor(){
+		click(certificationApplyingForRBtn);
+	}
+	
 	public void selectState(String stateName){
 		selectFromDropdown(stateList, stateName);
 	}

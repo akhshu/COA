@@ -1,6 +1,8 @@
 package framework;
 
 
+import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 
 import org.openqa.selenium.By;
@@ -14,7 +16,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Events {
 	WebDriver driver;
-	//String filePath = "COA\\src\\configuration\\config.properties";
 
 	public Events(WebDriver driver) {
 		this.driver = driver;
@@ -80,6 +81,12 @@ public class Events {
 		return wait.until(ExpectedConditions.presenceOfElementLocated(by));
 	}
 	
+	public WebElement waitForVisible(WebElement element){
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		return wait.until(ExpectedConditions.visibilityOf(element));
+	}
+	
+	
 	public int getRandonNumber(int count){
 		Random rand = new Random(); 
 		int value = rand.nextInt(count);
@@ -91,4 +98,30 @@ public class Events {
 		Select dropdown = new Select(getElement(by));
 		dropdown.selectByVisibleText(value);
 	}
+	
+	public boolean findValueInTable(By by,String value){
+		
+		WebElement certTable = getElement(by);
+		
+		List<WebElement> rows = certTable.findElements(By.tagName("tr"));
+		int row_count = rows.size();
+		System.out.println("Total number of rows are :  " + row_count);
+		boolean dataFound = false;
+		for(int i = 0; i<row_count; i ++){
+			List<WebElement> cols = rows.get(i).findElements(By.tagName("td"));
+			int col_count = cols.size();
+			for(int j = 0; j<col_count;j++){
+				String cellData = cols.get(j).getText();
+//				System.out.println("Cell Data is : " + cellData + "===");
+//				System.out.println("valid Data is : " + value + "===");
+				if(Objects.equals(cellData, value)){
+//					System.out.println("Data found at cell : " + i + "," + j);
+					dataFound = true;
+				}
+			}	
+		}
+		return dataFound;
+	}
+
+	
 }
