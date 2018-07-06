@@ -21,9 +21,16 @@ public class BaseTest{
 //		 driver = new FirefoxDriver();
 		 System.setProperty("webdriver.chrome.driver", "D:\\Selenium\\chromedriver.exe");
 		 driver = new ChromeDriver();
+		 driver.manage().deleteAllCookies();
+		 driver.manage().window().maximize();
 		 String url = Utilities.readConfig("url");
 		 driver.get(url);
+		 
+		 
+		 
+		 
 	}
+	
 	
 	/**
 	 * close application after test

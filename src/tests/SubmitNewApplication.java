@@ -14,6 +14,7 @@ import pages.Page2;
 import pages.Page3;
 import pages.Page4;
 import pages.Page5;
+import pages.Page6;
 
 public class SubmitNewApplication extends BaseTest {
 
@@ -27,6 +28,10 @@ public class SubmitNewApplication extends BaseTest {
 		Page3 page3 = new Page3(driver);
 		Page4 page4 = new Page4(driver);
 		Page5 page5 = new Page5(driver);
+		Page6 page6 = new Page6(driver);
+		
+		String fname = page5.getFileName("D:\\Prism Docs\\testfile1.txt");
+		System.out.println("Filename is : " + fname);
 		
 		// verify home page title
 		Assert.assertEquals("City of Atlanta GA SBE Program", homePage.getTitle());
@@ -99,18 +104,50 @@ public class SubmitNewApplication extends BaseTest {
 		homePage.continueFormButton();
 		
 		// fill page 5 form 
-		page5.uploadFile1("D:\\Prism Docs\\testfile.txt");
-		Thread.sleep(5000);
-		page5.uploadFile2("D:\\Prism Docs\\testfile.txt");
-		Thread.sleep(5000);
-		page5.uploadFile3("D:\\Prism Docs\\testfile.txt");
-		Thread.sleep(5000);
-		page5.uploadFile4("D:\\Prism Docs\\testfile.txt");
-		Thread.sleep(5000);
+		page5.uploadFile1("D:\\Prism Docs\\testfile1.txt");
+		page5.verifyFileUploaded("D:\\Prism Docs\\testfile1.txt");
+
+		page5.uploadFile2("D:\\Prism Docs\\testfile2.txt");
+		page5.verifyFileUploaded("D:\\Prism Docs\\testfile2.txt");
+
+		page5.uploadFile3("D:\\Prism Docs\\testfile3.txt");
+		page5.verifyFileUploaded("D:\\Prism Docs\\testfile3.txt");
+
+		page5.uploadFile4("D:\\Prism Docs\\testfile4.txt");
+		page5.verifyFileUploaded("D:\\Prism Docs\\testfile4.txt");
+
 		page5.selectNACheck();
 		Thread.sleep(9000);
+
 		homePage.continueFormButton();
 		
+		String name = "alpachino";
+		String owenershippercent = "100";
+		String title = "CEO";
+		String gender = "Male";
+		String race = "Native American";
+		String acquiredDate = "07/06/2018";
+		String streetAddress = "chandigarh";
+		String city = "chd";
+		String zip = "225566";
+		String State = "ALASKA";
+		String HomePhone = "9121545487";
+		
+		// fill page 6 form
+		page6.enterName("alpachino");
+		page6.enterOwenershipPercentage("100");
+		page6.enterTitle("ceo");
+		page6.selectGender("Male");
+		page6.selectRace("Native American");
+		page6.enterAcquiredDate("07/06/2018");
+		page6.enterStreetAddress("Chandigarh");
+		page6.enterCity("chd");
+		page6.enterZip("226655");
+		page6.selectState("ALASKA");
+		page6.enterHomePhone("9632587410");
+		page6.clickSaveOwener();
+		page6.verifySavedOwenerName("alpachino");
+		homePage.continueFormButton();
 		
 	}		
 }

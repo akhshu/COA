@@ -17,13 +17,10 @@ public class Page5 extends Events{
 	private By selectFile2= By.id("ctl00_ApplicationContent_ctlCheckListEBOSBO_lv_Checklist_ctrl1_fu_main_mainAsyncFileUpload_ctl02");
 	private By selectFile3= By.id("ctl00_ApplicationContent_ctlCheckListEBOSBO_lv_Checklist_ctrl2_fu_main_mainAsyncFileUpload_ctl02");
 	private By selectFile4= By.id("ctl00_ApplicationContent_ctlCheckListEBOSBO_lv_Checklist_ctrl3_fu_main_mainAsyncFileUpload_ctl02");
-	
-	private By file1Link = By.xpath("//a[contains (text(), 'Imp_notes1.txt')]");
-	
-	
-	private WebElement file2Link = (WebElement) By.xpath("//a[contains (text(), 'Imp_notes3.txt')]");
-	private By file3Link = By.xpath("//a[contains (text(), 'Imp_notes3.txt')]");
-	private By file4Link = By.xpath("//a[contains (text(), 'Imp_notes4.txt')]");
+
+	private By fileLink;
+	String xp1 = "//a[contains (text(),'";
+	String xp3 = "')]";
 	
 	
 	public void selectNACheck(){
@@ -32,12 +29,24 @@ public class Page5 extends Events{
 	
 	public void uploadFile1(String filePath){
 		enterValue(selectFile1, filePath);
-//		waitForVisible(file1Link);
 	}
 	
+	public void verifyFileUploaded(String filePath){
+		String fileName = getFileName(filePath);	
+		fileLink = By.xpath(xp1 + fileName + xp3);
+		waitForPresent(fileLink);
+		waitForVisible(fileLink);
+	}
+		
 	public void uploadFile2(String filePath){
 		enterValue(selectFile2, filePath);
 	}
+	
+	public String getFileName(String filePath){	
+		String filename = filePath.substring(filePath.lastIndexOf("\\")+1, filePath.length());
+		return filename;
+	}
+	
 	
 	public void uploadFile3(String filePath){
 		enterValue(selectFile3, filePath);

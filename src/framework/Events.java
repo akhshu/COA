@@ -75,15 +75,20 @@ public class Events {
 		String[] subStrings = mainString.split(" ");
 		return subStrings;
 	}
+
+	public String[] splitStringBy(String mainString, String delemeter) {
+		String[] subStrings = mainString.split(delemeter);
+		return subStrings;
+	}
 	
 	public WebElement waitForPresent(By by){
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		return wait.until(ExpectedConditions.presenceOfElementLocated(by));
 	}
 	
-	public WebElement waitForVisible(WebElement element){
+	public WebElement waitForVisible(By by){
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		return wait.until(ExpectedConditions.visibilityOf(element));
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 	}
 	
 	
