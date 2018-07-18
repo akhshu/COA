@@ -37,6 +37,6 @@ public class BaseTest{
 	 */
 	@AfterTest
 	public void closeApplication() {
-		driver.quit();
+//		driver.quit();
 	}
 }
