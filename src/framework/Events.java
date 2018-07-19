@@ -29,6 +29,8 @@ public class Events {
 		return driver.findElement(by);
 	}
 
+	
+	
 	/**
 	 * @param by, value
 	 */
@@ -42,6 +44,7 @@ public class Events {
 	 */
 	public void click(By by) {
 		waitForPresent(by);
+		waitForClickable(by);
 		getElement(by).click();
 	}
 
@@ -82,13 +85,24 @@ public class Events {
 	}
 	
 	public WebElement waitForPresent(By by){
-		WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebDriverWait wait = new WebDriverWait(driver, 20);
 		return wait.until(ExpectedConditions.presenceOfElementLocated(by));
 	}
-	
+
+	public WebElement waitForClickable(By by){
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		return wait.until(ExpectedConditions.elementToBeClickable(by));
+	}
+
 	public WebElement waitForVisible(By by){
-		WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebDriverWait wait = new WebDriverWait(driver, 20);
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+	}
+	
+	public boolean objectExist(By by){
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		boolean exist = driver.findElements(by).size() != 0;
+		return exist;
 	}
 	
 	
@@ -102,6 +116,21 @@ public class Events {
 	public void selectFromDropdown(By by,String value){
 		Select dropdown = new Select(getElement(by));
 		dropdown.selectByVisibleText(value);
+	}
+
+	public void selectFromDropdownByIndex(By by,int index){
+		Select dropdown = new Select(getElement(by));
+		dropdown.selectByIndex(index);
+	}
+
+	public void selectTodayDate(By dateInputBox, By todayDate ) throws InterruptedException{
+		WebElement tdayDate = getElement(todayDate);
+		WebElement inputDate = getElement(dateInputBox);
+		Actions act = new Actions(driver);
+		click(dateInputBox);
+		click(todayDate);
+//		act.moveToElement(tdayDate).click().build().perform();
+//		act.moveToElement(inputDate).click().moveToElement(tdayDate).click().build().perform();
 	}
 	
 	public boolean findValueInTable(By by,String value){

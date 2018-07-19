@@ -126,32 +126,15 @@ public class SubmitNewApplication extends BaseTest {
 		// fill page 5 form 
 		page5.uploadFile1("D:\\Prism Docs\\testfile1.txt");
 		page5.verifyFileUploaded("D:\\Prism Docs\\testfile1.txt");
-
 		page5.uploadFile2("D:\\Prism Docs\\testfile2.txt");
 		page5.verifyFileUploaded("D:\\Prism Docs\\testfile2.txt");
-
 		page5.uploadFile3("D:\\Prism Docs\\testfile3.txt");
 		page5.verifyFileUploaded("D:\\Prism Docs\\testfile3.txt");
-
 		page5.uploadFile4("D:\\Prism Docs\\testfile4.txt");
 		page5.verifyFileUploaded("D:\\Prism Docs\\testfile4.txt");
-
 		page5.selectNACheck();
 		Thread.sleep(9000);
-
 		homePage.continueFormButton();
-		
-//		String name = "alpachino";
-//		String owenershippercent = "100";
-//		String title = "CEO";
-//		String gender = "Male";
-//		String race = "Native American";
-//		String acquiredDate = "07/06/2018";
-//		String streetAddress = "chandigarh";
-//		String city = "chd";
-//		String zip = "225566";
-//		String State = "ALASKA";
-//		String HomePhone = "9121545487";
 		
 		// fill page 6 form
 		page6.enterName("al pachino");
@@ -167,15 +150,17 @@ public class SubmitNewApplication extends BaseTest {
 		page6.enterHomePhone("9632587410");
 		page6.clickSaveOwener();
 //		page6.verifySavedOwenerName("pachino");
+		Thread.sleep(7000);
 		homePage.continueFormButton();
 		
 		//fill page 7 form 
-		page7.selectOwner("pachino,  al");
+		page7.selectOwner("pachino, al");
 		page7.selectClassOfStock("Common");
 		page7.enterNumberOfStocks("50");
 		page7.enterAcquiredDate("07/06/2018");
 		page7.clickSaveStockDetails();
 //		page7.verifySavedOwenerName("pachino,  al");
+		Thread.sleep(3000);
 		homePage.continueFormButton();
 
 		// fill page 8 form 
@@ -186,6 +171,7 @@ public class SubmitNewApplication extends BaseTest {
 		page8.selectGender("Male");
 		page8.clickSaveBoardMembers();
 //		page8.verifySavedBoardMemberName("shukla, akhil");
+		Thread.sleep(3000);
 		homePage.continueFormButton();
 		
 		// fill page 9 form 
@@ -196,6 +182,7 @@ public class SubmitNewApplication extends BaseTest {
 		page9.selectGender("Male");
 		page9.clickSaveOfficer();
 //		page9.verifySavedOfficerName("shukla, akhil");
+		Thread.sleep(3000);
 		homePage.continueFormButton();
 		
 		//fill page 10 form 
@@ -204,18 +191,23 @@ public class SubmitNewApplication extends BaseTest {
 		page10.selectBiddingGender("Male");
 		page10.selectBiddingEthnicity("African American");
 		page10.clickSaveBiddingButton();
+		page10.verifyBiddingDeleteButton();
 		
 		page10.enterFinancialName("ajay singh");
 		page10.enterFinancialTitle("cfo");
 		page10.selectFinancialGender("Male");
 		page10.selectFinancialEthnicity("African American");
 		page10.clickSaveFinancialButton();
+		page10.verifyFinancialDeleteButton();
 		
 		page10.enterOfficeName("raj thakre");
 		page10.enterOfficeTitle("coo");
 		page10.selectOfficeGender("Male");
 		page10.selectOfficeEthnicity("African American");
 		page10.clickSaveOfficeButton();
+		page10.verifyOfficeDeleteButton();
+		
+		Thread.sleep(3000);
 		homePage.continueFormButton();
 		
 		// fill page 11 form 
@@ -238,8 +230,10 @@ public class SubmitNewApplication extends BaseTest {
 		page11.enterPPEmail("akhil@test.com");
 		page11.enterPPPhone("6565656565");
 		page11.enterPPScopeOfWork("test scope");
+		Thread.sleep(3000);
 		page11.clickSavePastPerformance();
 //		page11.verifySavedPastPerformance("akhil shuklaa");
+		Thread.sleep(3000);
 		homePage.continueFormButton();
 		
 		//fill page 12 form
@@ -253,6 +247,8 @@ public class SubmitNewApplication extends BaseTest {
 		page12.enterZip("555555");
 		page12.clickSaveAccount();
 //		page12.verifySavedAccountInfo("985689");
+		Thread.sleep(3000);
+		homePage.continueFormButton();
 		
 		// fill page 13 form 
 		page13.selectAssetType("Trucks");
@@ -261,6 +257,7 @@ public class SubmitNewApplication extends BaseTest {
 		page13.SelectOwnedRadioButton();
 		page13.ClickSaveAsset();
 //		page13.verifySavedAsset("testmodel");
+		Thread.sleep(3000);
 		homePage.continueFormButton();
 		
 //		fill page 14 form 
@@ -271,6 +268,7 @@ public class SubmitNewApplication extends BaseTest {
 		page14.enterZip("252525");
 		page14.enterPhoneNumber("2525252525");
 		page14.clickSaveInsurance();
+		Thread.sleep(4000);
 //		page14.verifySavedInsuranceInfo("xcorp");
 		page14.enterIssuingBank("ICICI");
 		page14.enterBondingAddress("chandigarh");
@@ -282,6 +280,7 @@ public class SubmitNewApplication extends BaseTest {
 		page14.enterBondingLimit("60000");
 		page14.clickSaveBonding();
 //		page14.verifySavedBondingInfo("xcorp");
+		Thread.sleep(4000);
 		homePage.continueFormButton();
 		
 		// Click on submit button on page 15 

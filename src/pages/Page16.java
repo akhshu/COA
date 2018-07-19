@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
 import framework.Events;
 
@@ -15,10 +16,10 @@ public class Page16 extends Events{
 		super(driver);
 	}
 
-	private By thankyouTextTable= By.xpath("//table[@class = 'text contenttable prc100']");
+	private By thankyouText= By.xpath("//*[contains(text(),'Thank you for submitting your  application')]");
 
 	public boolean verifyThankYouText(){
-		return findValueInTable(thankyouTextTable,"Thank you for submitting your  application!");	
+		return objectExist(thankyouText);
 	}
 	
 }

@@ -2,6 +2,8 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import framework.Events;
 
@@ -25,12 +27,12 @@ public class Page6 extends Events{
 	private By cityInputBox = By.id("ctl00_ApplicationContent_txtOwnerCity");
 	private By zipBox = By.id("ctl00_ApplicationContent_txtOwnerZip");
 	private By stateList = By.id("ctl00_ApplicationContent_ddlOwnerState");
-	private By homePhoneInputBox = By.id("ctl00_ApplicationContent_ddlOwnerState");
+	private By homePhoneInputBox = By.id("ctl00_ApplicationContent_txtOwnerPhone");
 	private By saveOwenerBtn = By.id("ctl00_ApplicationContent_btnSaveOwner");
 	private By owenersInfoTable = By.id("ctl00_ApplicationContent_dgdOwners");
+	private By acquiredDateTodayBtn = By.id("ctl00_ApplicationContent_textAquiredDateCalendar_day_1_0");
 	
 
-	
 	
 	public void enterName(String name){
 		enterValue(nameInputBox, name);
@@ -54,9 +56,21 @@ public class Page6 extends Events{
 	
 	/**
 	 * @param date : mm/dd/yyyy
+	 * @throws InterruptedException 
 	 */
-	public void enterAcquiredDate(String date){
-		enterValue(acquiredDateInputBox, date); 
+	public void enterAcquiredDate(String date) throws InterruptedException{
+		
+//		selectTodayDate(acquiredDateInputBox,acquiredDateTodayBtn);
+		
+		click(acquiredDateInputBox);
+		click(acquiredDateTodayBtn);
+
+//		WebElement tdayDate = getElement(acquiredDateTodayBtn);
+//		click(acquiredDateInputBox);
+//		Actions act = new Actions(driver);
+//		act.moveToElement(tdayDate);
+//		click(acquiredDateTodayBtn);
+//		enterValue(acquiredDateInputBox, date); 
 	}
 	
 	public void enterStreetAddress(String address){

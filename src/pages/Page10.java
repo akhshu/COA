@@ -20,19 +20,21 @@ public class Page10 extends Events{
 	private By biddingGenderList = By.id("ctl00_ApplicationContent_dgdPersonnel_ctl02_ddlGender1");
 	private By biddingEthnicityList = By.id("ctl00_ApplicationContent_dgdPersonnel_ctl02_ddlRace1");
 	private By saveBiddingBtn = By.id("ctl00_ApplicationContent_dgdPersonnel_ctl02_btnSave");
-	
+	private By deleteBiddingBtn = By.id("ctl00_ApplicationContent_dgdPersonnel_ctl02_btnDelete");
+		
 	private By financialNameInputBox = By.id("ctl00_ApplicationContent_dgdPersonnel_ctl03_txtEmployeeName1");
 	private By financialTitleInputBox = By.id("ctl00_ApplicationContent_dgdPersonnel_ctl03_txtPosition1");
 	private By financialGenderList = By.id("ctl00_ApplicationContent_dgdPersonnel_ctl03_ddlGender1");
 	private By financialEthnicityList = By.id("ctl00_ApplicationContent_dgdPersonnel_ctl03_ddlRace1");
 	private By saveFinancialBtn = By.id("ctl00_ApplicationContent_dgdPersonnel_ctl03_btnSave");
+	private By deleteFinancialBtn = By.id("ctl00_ApplicationContent_dgdPersonnel_ctl03_btnDelete");
 	
 	private By officeNameInputBox = By.id("ctl00_ApplicationContent_dgdPersonnel_ctl04_txtEmployeeName1");
 	private By officeTitleInputBox = By.id("ctl00_ApplicationContent_dgdPersonnel_ctl04_txtPosition1");
 	private By officeGenderList = By.id("ctl00_ApplicationContent_dgdPersonnel_ctl04_ddlGender1");
 	private By officeEthnicityList = By.id("ctl00_ApplicationContent_dgdPersonnel_ctl04_ddlRace1");
 	private By saveOfficeBtn = By.id("ctl00_ApplicationContent_dgdPersonnel_ctl04_btnSave");
-	
+	private By deleteOfficeBtn = By.id("ctl00_ApplicationContent_dgdPersonnel_ctl04_btnDelete");
 	
 	public void enterBiddingName(String name){
 		enterValue(biddingNameInputBox, name);
@@ -57,7 +59,6 @@ public class Page10 extends Events{
 	public void enterOfficeTitle(String title){
 		enterValue(officeTitleInputBox, title);
 	}
-
 
 	public void selectBiddingGender(String gender){
 		selectFromDropdown(biddingGenderList, gender);
@@ -95,5 +96,17 @@ public class Page10 extends Events{
 		click(saveOfficeBtn);
 	}
 	
+	public void verifyOfficeDeleteButton(){
+		waitForVisible(deleteOfficeBtn);
+	}
+
+	public void verifyBiddingDeleteButton(){
+		waitForVisible(deleteBiddingBtn);
+	}
+
+	public void verifyFinancialDeleteButton(){
+		waitForVisible(deleteFinancialBtn);
+	}
+
 
 }

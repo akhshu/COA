@@ -25,7 +25,8 @@ public class Page7 extends Events{
 	
 	
 	public void selectOwner(String owener){
-		selectFromDropdown(ownerList, owener);
+//		selectFromDropdown(ownerList, owener);
+		selectFromDropdownByIndex(ownerList, 1);
 	}
 	
 
