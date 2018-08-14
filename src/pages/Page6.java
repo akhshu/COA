@@ -30,7 +30,9 @@ public class Page6 extends Events{
 	private By homePhoneInputBox = By.id("ctl00_ApplicationContent_txtOwnerPhone");
 	private By saveOwenerBtn = By.id("ctl00_ApplicationContent_btnSaveOwner");
 	private By owenersInfoTable = By.id("ctl00_ApplicationContent_dgdOwners");
-	private By acquiredDateTodayBtn = By.id("ctl00_ApplicationContent_textAquiredDateCalendar_day_1_0");
+	
+	private By acquiredDateTodayBtn = By.id("ctl00_ApplicationContent_textAquiredDateCalendar_day_0_0");
+	private By calenderPrevBtn = By.id("ctl00_ApplicationContent_textAquiredDateCalendar_prevArrow");
 	
 
 	
@@ -63,6 +65,7 @@ public class Page6 extends Events{
 //		selectTodayDate(acquiredDateInputBox,acquiredDateTodayBtn);
 		
 		click(acquiredDateInputBox);
+		click(calenderPrevBtn);
 		click(acquiredDateTodayBtn);
 
 //		WebElement tdayDate = getElement(acquiredDateTodayBtn);

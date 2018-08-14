@@ -17,17 +17,22 @@ public class BaseTest{
 	 */
 	@BeforeTest
 	public void launchApplication() {
-//		 System.setProperty("webdriver.gecko.driver", "D:\\Selenium\\geckodriver.exe"); 
-//		 driver = new FirefoxDriver();
-		 System.setProperty("webdriver.chrome.driver", "D:\\Selenium\\chromedriver.exe");
-		 driver = new ChromeDriver();
+		
+		 String browserType= Utilities.readConfig("browser");
+		 
+		 if(browserType.equalsIgnoreCase("firefox")){
+			 System.setProperty("webdriver.gecko.driver", "D:\\Selenium\\geckodriver.exe"); 
+			 driver = new FirefoxDriver();			 
+		 }
+		 else if(browserType.equalsIgnoreCase("chrome")){ 
+			 System.setProperty("webdriver.chrome.driver", "D:\\Selenium\\chromedriver.exe");
+			 driver = new ChromeDriver();
+		 }
+		 
 		 driver.manage().deleteAllCookies();
 		 driver.manage().window().maximize();
-		 String url = Utilities.readConfig("url");
-		 driver.get(url);
-		 
-		 
-		 
+		 String url = Utilities.readConfig("coatesturl");
+		 driver.get(url); 
 		 
 	}
 	
@@ -37,6 +42,6 @@ public class BaseTest{
 	 */
 	@AfterTest
 	public void closeApplication() {
-//		driver.quit();
+		driver.quit();
 	}
 }

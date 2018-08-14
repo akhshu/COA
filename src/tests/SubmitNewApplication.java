@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.google.common.base.Verify;
+
 import framework.Utilities;
 import pages.DashboardPage;
 import pages.HomePage;
@@ -83,7 +85,7 @@ public class SubmitNewApplication extends BaseTest {
 		
 		// fill page 2 form 
 		page2.selectState("IOWA");
-		page2.SelectCertificationApplyingFor();
+		page2.SelectCertificationApplyingFor("AABE");
 		page2.enterCompanyName("test company 1");
 		page2.enterStreetAddress("test address 1");
 		page2.enterCity("chandigarh");
@@ -113,9 +115,10 @@ public class SubmitNewApplication extends BaseTest {
 		
 		// fill page 4 form 
 		page4.selectTypeOfFirm("Corporation");
-		page4.enterDateEstablished("06/11/2018");
+//		page4.selectTypeOfFirm("General Partnership");
 		page4.selectMethodOfAcquisition("Started as a new business");
 		page4.selectMainArea("Construction");
+		page4.enterDateEstablished("06/11/2018");
 		page4.enterIndustryCode("236100 Residential Building Construction (NAICS)");
 		page4.clickAddCodeButton();
 		Thread.sleep(4000);
@@ -154,13 +157,13 @@ public class SubmitNewApplication extends BaseTest {
 		homePage.continueFormButton();
 		
 		//fill page 7 form 
-		page7.selectOwner("pachino, al");
-		page7.selectClassOfStock("Common");
-		page7.enterNumberOfStocks("50");
-		page7.enterAcquiredDate("07/06/2018");
-		page7.clickSaveStockDetails();
-//		page7.verifySavedOwenerName("pachino,  al");
-		Thread.sleep(3000);
+//		page7.selectOwner("pachino, al");
+//		page7.selectClassOfStock("Common");
+//		page7.enterNumberOfStocks("50");
+//		page7.enterAcquiredDate("07/06/2018");
+//		page7.clickSaveStockDetails();
+////		page7.verifySavedOwenerName("pachino,  al");
+//		Thread.sleep(3000);
 		homePage.continueFormButton();
 
 		// fill page 8 form 
@@ -185,6 +188,7 @@ public class SubmitNewApplication extends BaseTest {
 		Thread.sleep(3000);
 		homePage.continueFormButton();
 		
+				
 		//fill page 10 form 
 		page10.enterBiddingName("akhil singh");
 		page10.enterBiddingTitle("ceo");

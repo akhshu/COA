@@ -16,7 +16,16 @@ public class Page2 extends Events{
 	private By federalTaxIdInputBox = By.id("ctl00_ApplicationContent_txtTaxID");
 	private By findMeButton = By.id("ctl00_ApplicationContent_btnFindByTaxID");
 	private By vendorNotFoundLabel = By.id("ctl00_ApplicationContent_divTaxIDNotFound");
-	private By certificationApplyingForRBtn = By.id("ctl00_ApplicationContent_rblCertTypes_0");
+	
+	//private By certificationApplyingForRBtn = By.id("ctl00_ApplicationContent_rblCertTypes_0");
+	
+	private By certificationAABECheckBox = By.id("ctl00_ApplicationContent_chkCertTypes_0");
+	private By certificationFBECheckBox = By.id("ctl00_ApplicationContent_chkCertTypes_1");
+	private By certificationSBECheckBox = By.id("ctl00_ApplicationContent_chkCertTypes_2");
+	private By certificationHABECheckBox = By.id("ctl00_ApplicationContent_chkCertTypes_3");
+	private By certificationAPABECheckBox = By.id("ctl00_ApplicationContent_chkCertTypes_4");
+	
+	
 	private By projectPendingRBtn = By.id("rdb_COA_No");
 	private By companyNameInputBox = By.id("ctl00_ApplicationContent_txtVendorName");
 	private By streetAddressInputBox = By.id("ctl00_ApplicationContent_txtPrimaryAddress1");
@@ -42,8 +51,26 @@ public class Page2 extends Events{
 		return getText(vendorNotFoundLabel);
 	}
 
-	public void SelectCertificationApplyingFor(){
-		click(certificationApplyingForRBtn);
+	/**
+	 * @param certfor : AABE,APABE,FBE,HABE,SBE
+	 */
+	public void SelectCertificationApplyingFor(String certFor){
+//		click(certificationApplyingForRBtn);
+		switch(certFor){
+			case "AABE" : 
+				click(certificationAABECheckBox);
+				break;
+			case "APABE" :
+				click(certificationAPABECheckBox);
+			case "FBE" :
+				click(certificationFBECheckBox);
+			case "HABE" :
+				click(certificationHABECheckBox);
+			case "SBE" :
+				click(certificationSBECheckBox);
+			default : 
+				System.out.println("Invalid cert applying for");
+		}
 	}
 	
 	public void selectState(String stateName){

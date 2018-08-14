@@ -1,29 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="201927" started-at="2018-07-19T09:24:02Z" finished-at="2018-07-19T09:27:24Z">
+  <suite name="Default suite" duration-ms="232467" started-at="2018-08-08T10:23:07Z" finished-at="2018-08-08T10:27:00Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="201927" started-at="2018-07-19T09:24:02Z" finished-at="2018-07-19T09:27:24Z">
+    <test name="Default test" duration-ms="232467" started-at="2018-08-08T10:23:07Z" finished-at="2018-08-08T10:27:00Z">
       <class name="tests.SubmitNewApplication">
-        <test-method status="PASS" signature="launchApplication()[pri:0, instance:tests.SubmitNewApplication@724af044]" name="launchApplication" is-config="true" duration-ms="13010" started-at="2018-07-19T14:54:02Z" finished-at="2018-07-19T14:54:15Z">
+        <test-method status="PASS" signature="launchApplication()[pri:0, instance:tests.SubmitNewApplication@724af044]" name="launchApplication" is-config="true" duration-ms="25177" started-at="2018-08-08T15:53:07Z" finished-at="2018-08-08T15:53:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method status="FAIL" signature="verifySubmitNewApplication()[pri:0, instance:tests.SubmitNewApplication@724af044]" name="verifySubmitNewApplication" duration-ms="188879" started-at="2018-07-19T14:54:15Z" finished-at="2018-07-19T14:57:24Z">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [true] but found [false]at org.testng.Assert.fail(Assert.java:96)at org.testng.Assert.failNotEquals(Assert.java:776)at org.testng.Assert.assertEqualsImpl(Assert.java:137)at org.testng.Assert.assertEquals(Assert.java:118)at org.testng.Assert.assertEquals(Assert.java:568)at org.testng.Assert.assertEquals(Assert.java:578)at tests.SubmitNewApplication.verifySubmitNewApplication(SubmitNewApplication.java:291)at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)at java.lang.reflect.Method.invoke(Unknown Source)at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)at org.testng.internal.Invoker.invokeMethod(Invoker.java:571)at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:707)at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:979)at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)at org.testng.TestRunner.privateRun(TestRunner.java:648)at org.testng.TestRunner.run(TestRunner.java:505)at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)at org.testng.SuiteRunner.run(SuiteRunner.java:364)at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)at org.testng.TestNG.runSuites(TestNG.java:1028)at org.testng.TestNG.run(TestNG.java:996)at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        <test-method status="PASS" signature="verifySubmitNewApplication()[pri:0, instance:tests.SubmitNewApplication@724af044]" name="verifySubmitNewApplication" duration-ms="206364" started-at="2018-08-08T15:53:33Z" finished-at="2018-08-08T15:56:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifySubmitNewApplication -->
-        <test-method status="PASS" signature="closeApplication()[pri:0, instance:tests.SubmitNewApplication@724af044]" name="closeApplication" is-config="true" duration-ms="10" started-at="2018-07-19T14:57:24Z" finished-at="2018-07-19T14:57:24Z">
+        <test-method status="PASS" signature="closeApplication()[pri:0, instance:tests.SubmitNewApplication@724af044]" name="closeApplication" is-config="true" duration-ms="896" started-at="2018-08-08T15:56:59Z" finished-at="2018-08-08T15:57:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApplication -->

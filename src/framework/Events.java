@@ -26,6 +26,8 @@ public class Events {
 	 * @return list of <webelement>
 	 */
 	public WebElement getElement(By by) {
+		waitForPresent(by);
+		Log.info("Element is present");
 		return driver.findElement(by);
 	}
 
